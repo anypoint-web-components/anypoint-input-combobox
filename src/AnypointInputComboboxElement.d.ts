@@ -1,0 +1,114 @@
+import {TemplateResult, CSSResult} from 'lit-element';
+import {AnypointInput} from '@anypoint-web-components/anypoint-input/';
+
+/**
+ * `anypoint-input-combobox`
+ */
+export declare class AnypointInputComboboxElement extends AnypointInput {
+  readonly styles: CSSResult[];
+  /**
+   * The content element that is contained by the dropdown, if any.
+   */
+  readonly contentElement: HTMLElement|null;
+  /**
+   * Whether the dropdown is rendered.
+   */
+  opened: boolean;
+  /**
+   * The orientation against which to align the element vertically
+   * relative to the `positionTarget`. Possible values are "top", "bottom",
+   * "middle", "auto".
+   */
+  verticalAlign: string;
+  /**
+   * The orientation against which to align the element horizontally
+   * relative to the `positionTarget`. Possible values are "left", "right",
+   * "center", "auto".
+   */
+  horizontalAlign: string;
+  /**
+   * A pixel value that will be added to the position calculated for the
+   * given `verticalAlign`, in the direction of alignment. You can think
+   * of it as increasing or decreasing the distance to the side of the
+   * screen given by `verticalAlign`.
+   *
+   * If `verticalAlign` is "top" or "middle", this offset will increase or
+   * decrease the distance to the top side of the screen: a negative offset
+   * will move the dropdown upwards; a positive one, downwards.
+   *
+   * Conversely if `verticalAlign` is "bottom", this offset will increase
+   * or decrease the distance to the bottom side of the screen: a negative
+   * offset will move the dropdown downwards; a positive one, upwards.
+   */
+  verticalOffset: number;
+  /**
+   * A pixel value that will be added to the position calculated for the
+   * given `horizontalAlign`, in the direction of alignment. You can think
+   * of it as increasing or decreasing the distance to the side of the
+   * screen given by `horizontalAlign`.
+   *
+   * If `horizontalAlign` is "left" or "center", this offset will increase or
+   * decrease the distance to the left side of the screen: a negative offset
+   * will move the dropdown to the left; a positive one, to the right.
+   *
+   * Conversely if `horizontalAlign` is "right", this offset will increase
+   * or decrease the distance to the right side of the screen: a negative
+   * offset will move the dropdown to the right; a positive one, to the left.
+   */
+  horizontalOffset: number;
+  /**
+   * If true, it will use `horizontalAlign` and `verticalAlign` values as
+   * preferred alignment and if there's not enough space, it will pick the
+   * values which minimize the cropping.
+   */
+  dynamicAlign: boolean;
+  /**
+   * Will position the list around the button without overlapping
+   * it.
+   */
+  noOverlap: boolean;
+  /**
+   * An animation config. If provided, this will be used to animate the
+   * opening of the dropdown. Pass an Array for multiple animations.
+   * See `neon-animation` documentation for more animation configuration
+   * details.
+   */
+  openAnimationConfig?: object;
+
+  /**
+   * An animation config. If provided, this will be used to animate the
+   * closing of the dropdown. Pass an Array for multiple animations.
+   * See `neon-animation` documentation for more animation configuration
+   * details.
+   */
+  closeAnimationConfig?: object;
+  /**
+   * Set to true to disable animations when opening and closing the
+   * dropdown.
+   */
+  noAnimations: boolean;
+  /**
+   * By default, the dropdown will constrain scrolling on the page
+   * to itself when opened.
+   * Set to true in order to prevent scroll from being constrained
+   * to the dropdown when it opens.
+   * This property is a shortcut to set `scrollAction` to lock or refit.
+   * Prefer directly setting the `scrollAction` property.
+   */
+  allowOutsideScroll: boolean;
+  /**
+   * Dropdown fits the content width.
+   * Default value is false.
+   */
+  fitPositionTarget: boolean;
+
+  constructor();
+  connectedCallback(): void;
+  disconnectedCallback(): void;
+  /**
+   * Toggles the dropdown opened state
+   */
+  toggle(): void;
+  render(): TemplateResult;
+  _suffixTemplate(): TemplateResult;
+}
