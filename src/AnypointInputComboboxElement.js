@@ -226,7 +226,7 @@ export class AnypointInputComboboxElement extends AnypointInput {
   /**
    * Handles arrow down press.
    * Opens the dropdown if not opened and moves selection when needed.
-   * 
+   *
    * @param {KeyboardEvent} e
    */
   [onArrowUp](e) {
@@ -247,7 +247,7 @@ export class AnypointInputComboboxElement extends AnypointInput {
   /**
    * Handles arrow up press.
    * Opens the dropdown if not opened and moves selection when needed.
-   * 
+   *
    * @param {KeyboardEvent} e
    */
   [onArrowDown](e) {
@@ -267,7 +267,7 @@ export class AnypointInputComboboxElement extends AnypointInput {
 
   /**
    * Sets value after an item was selected in the dropdown.
-   * @param {CustomEvent} e 
+   * @param {CustomEvent} e
    */
   [selectHandler](e) {
     this.opened = false;
@@ -279,6 +279,11 @@ export class AnypointInputComboboxElement extends AnypointInput {
     // @ts-ignore
     const value = node.label || node.getAttribute('label') || node.textContent.trim();
     this.value = value;
+    // the input is dispatched as selection changes the input value
+    // but the input won't dispatch this event in this situation. However,
+    // this is an input from the user side. Change, however, is dispatched
+    // when value is changed on the input's property.
+    this.dispatchEvent(new CustomEvent('input'));
     this.dispatchEvent(new CustomEvent('change'));
   }
 
@@ -307,8 +312,8 @@ export class AnypointInputComboboxElement extends AnypointInput {
     return html`
     <div class="suffixes">
       <slot name="suffix"></slot>
-      <span class="${classes}" 
-        aria-label="Activate to toggle suggestions" 
+      <span class="${classes}"
+        aria-label="Activate to toggle suggestions"
         title="Toggle suggestions"
         @click="${this.toggle}"
       >${arrowDown}</span>
@@ -316,9 +321,9 @@ export class AnypointInputComboboxElement extends AnypointInput {
   }
 
   [dropdownTemplate]() {
-    const { 
-      opened, 
-      horizontalAlign, 
+    const {
+      opened,
+      horizontalAlign,
       verticalAlign,
       dynamicAlign,
       horizontalOffset,

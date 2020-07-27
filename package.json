@@ -1,7 +1,7 @@
 {
   "name": "@anypoint-web-components/anypoint-input-combobox",
   "description": "An input with a drop down items styled for Material Design and the Anypoint platform.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "Apache-2.0",
   "main": "index.js",
   "module": "index.js",

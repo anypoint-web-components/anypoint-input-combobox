@@ -225,6 +225,15 @@ describe('AnypointInputComboboxElement', () => {
       assert.isTrue(spy.called);
     });
 
+    it('dispatches input event', async () => {
+      const element = await listFixture();
+      const spy = sinon.spy();
+      element.addEventListener('input', spy);
+      const item = element.querySelector('anypoint-item');
+      MockInteractions.click(item);
+      assert.isTrue(spy.called);
+    });
+
     it('inserts value from the "label" attribute', async () => {
       const element = await openedListFixture();
       const dropdown = element.shadowRoot.querySelector('anypoint-dropdown');
@@ -248,7 +257,7 @@ describe('AnypointInputComboboxElement', () => {
       <anypoint-input-combobox aria-haspopup="false"></anypoint-input-combobox>
       `));
     }
-    
+
     it('sets aria-haspopup on the element', async () => {
       const element = await listFixture();
       assert.equal(element.getAttribute('aria-haspopup'), 'true');
