@@ -1,11 +1,11 @@
-[![Published on NPM](https://img.shields.io/npm/v/@anypoint-web-components/anypoint-input-combobox.svg)](https://www.npmjs.com/package/@anypoint-web-components/anypoint-input-combobox)
-
-[![Build Status](https://travis-ci.com/anypoint-web-components/anypoint-input-combobox.svg)](https://travis-ci.com/anypoint-web-components/anypoint-input-combobox)
-
 # anypoint-input-combobox
 
 A combo box is a combination of a text field and the dropdown element. It renders a free input element that coexists with a list of predefined values.
 The user is not limited to the list of rendered dropdown values but instead it helps choose the right option.
+
+[![Published on NPM](https://img.shields.io/npm/v/@anypoint-web-components/anypoint-input-combobox.svg)](https://www.npmjs.com/package/@anypoint-web-components/anypoint-input-combobox)
+
+[![tests](https://github.com/anypoint-web-components/anypoint-input-combobox/actions/workflows/tests.yml/badge.svg)](https://github.com/anypoint-web-components/anypoint-input-combobox/actions/workflows/tests.yml)
 
 ## Usage
 
