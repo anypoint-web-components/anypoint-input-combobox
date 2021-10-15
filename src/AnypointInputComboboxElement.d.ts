@@ -3,6 +3,7 @@ import {AnypointInput} from '@anypoint-web-components/anypoint-input/';
 
 /**
  * `anypoint-input-combobox`
+ * @deprecated Migrate to @anypoint-web-components/awc
  */
 export declare class AnypointInputComboboxElement extends AnypointInput {
   get styles(): CSSResult[];

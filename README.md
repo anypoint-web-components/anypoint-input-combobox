@@ -1,4 +1,8 @@
-# anypoint-input-combobox
+# Deprecated
+
+This component has been moved to `anypoint-web-components/awc`.
+
+-----
 
 A combo box is a combination of a text field and the dropdown element. It renders a free input element that coexists with a list of predefined values.
 The user is not limited to the list of rendered dropdown values but instead it helps choose the right option.
